@@ -23,7 +23,7 @@ export default function DashboardNew() {
   const transactionsRef = useScrollObserver()
   const insightsRef = useScrollObserver()
   return (
-    <div className="min-h-screen w-full flex flex-col bg-gradient-to-b from-[#f8fafc] via-[#eef2ff] to-[#f8fafc] dark:bg-gradient-to-br dark:from-[#0f172a] dark:via-[#0b1220] dark:to-[#020617] transition-colors duration-300">
+    <div className="min-h-screen w-full flex flex-col transition-colors duration-300">
       {/* Navbar */}
       <NavbarNew />
 

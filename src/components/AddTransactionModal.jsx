@@ -118,7 +118,7 @@ export default function AddTransactionModal({ isOpen, onClose }) {
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
           >
-            <motion.div className="w-full max-w-md max-h-[90vh] overflow-y-auto bg-white dark:bg-gradient-to-br dark:from-white/10 dark:to-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/20 rounded-2xl shadow-2xl transition-colors duration-300">
+            <motion.div className="w-full max-w-md max-h-[90vh] overflow-y-auto bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-2xl transition-colors duration-300">
               <div className="p-6 sm:p-8">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 mb-6">
@@ -141,7 +141,7 @@ export default function AddTransactionModal({ isOpen, onClose }) {
                 </div>
 
                 {/* Divider */}
-                <div className="h-px bg-gradient-to-r from-gray-200 dark:from-white/0 via-gray-300 dark:via-white/20 to-gray-200 dark:to-white/0 mb-6 transition-colors duration-300" />
+                <div className="h-px bg-gradient-to-r from-gray-200 dark:from-slate-700 via-gray-300 dark:via-slate-600 to-gray-200 dark:to-slate-700 mb-6 transition-colors duration-300" />
 
                 {/* Error Message */}
                 {error && (
@@ -158,14 +158,14 @@ export default function AddTransactionModal({ isOpen, onClose }) {
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   {/* Type */}
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-400 mb-3 transition-colors duration-300">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3 transition-colors duration-300">
                       Type
                     </label>
                     <select
                       name="type"
                       value={formData.type}
                       onChange={handleTypeChange}
-                      className="w-full px-4 py-3 bg-white dark:bg-slate-700/60 text-gray-900 dark:text-white border border-gray-300 dark:border-white/30 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none appearance-none pr-10 cursor-pointer transition-all font-medium hover:bg-gray-50 dark:hover:bg-slate-700/80 focus:bg-gray-50 dark:focus:bg-slate-700"
+                      className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-gray-900 dark:text-white border border-gray-300 dark:border-white/50 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none appearance-none pr-10 cursor-pointer transition-all font-medium hover:bg-gray-50 dark:hover:bg-slate-600 focus:bg-gray-50 dark:focus:bg-slate-600"
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg fill='%239ca3af' viewBox='0 0 20 20'%3E%3Cpath d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L5.707 10.707a1 1 0 01-1.414-1.414l6-6z'/%3E%3C/svg%3E")`,
                         backgroundRepeat: 'no-repeat',
@@ -181,14 +181,14 @@ export default function AddTransactionModal({ isOpen, onClose }) {
 
                   {/* Category */}
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-400 mb-3 transition-colors duration-300">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3 transition-colors duration-300">
                       Category
                     </label>
                     <select
                       name="category"
                       value={formData.category}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white dark:bg-slate-700/60 text-gray-900 dark:text-white border border-gray-300 dark:border-white/30 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none appearance-none pr-10 cursor-pointer transition-all font-medium hover:bg-gray-50 dark:hover:bg-slate-700/80 focus:bg-gray-50 dark:focus:bg-slate-700"
+                      className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-gray-900 dark:text-white border border-gray-300 dark:border-white/50 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none appearance-none pr-10 cursor-pointer transition-all font-medium hover:bg-gray-50 dark:hover:bg-slate-600 focus:bg-gray-50 dark:focus:bg-slate-600"
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg fill='%239ca3af' viewBox='0 0 20 20'%3E%3Cpath d='M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L5.707 10.707a1 1 0 01-1.414-1.414l6-6z'/%3E%3C/svg%3E")`,
                         backgroundRepeat: 'no-repeat',
@@ -207,18 +207,18 @@ export default function AddTransactionModal({ isOpen, onClose }) {
 
                   {/* Amount */}
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-400 mb-3 transition-colors duration-300">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3 transition-colors duration-300">
                       Amount
                     </label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-400 text-lg font-semibold transition-colors duration-300">₹</span>
+                      <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 dark:text-gray-300 text-lg font-semibold transition-colors duration-300">₹</span>
                       <input
                         type="number"
                         name="amount"
                         placeholder="0.00"
                         value={formData.amount}
                         onChange={handleChange}
-                        className="w-full pl-8 pr-4 py-3 bg-white dark:bg-slate-700/60 text-gray-900 dark:text-white border border-gray-300 dark:border-white/30 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500 font-medium hover:bg-gray-50 dark:hover:bg-slate-700/80 focus:bg-gray-50 dark:focus:bg-slate-700"
+                        className="w-full pl-8 pr-4 py-3 bg-white dark:bg-slate-700 text-gray-900 dark:text-white border border-gray-300 dark:border-white/50 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-all placeholder-gray-400 dark:placeholder-gray-400 font-medium hover:bg-gray-50 dark:hover:bg-slate-600 focus:bg-gray-50 dark:focus:bg-slate-600"
                         step="0.01"
                         min="0"
                       />
@@ -227,7 +227,7 @@ export default function AddTransactionModal({ isOpen, onClose }) {
 
                   {/* Date */}
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-400 mb-3 transition-colors duration-300">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3 transition-colors duration-300">
                       Date
                     </label>
                     <input
@@ -235,13 +235,13 @@ export default function AddTransactionModal({ isOpen, onClose }) {
                       name="date"
                       value={formData.date}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white dark:bg-slate-700/60 text-gray-900 dark:text-white border border-gray-300 dark:border-white/30 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-all font-medium hover:bg-gray-50 dark:hover:bg-slate-700/80 focus:bg-gray-50 dark:focus:bg-slate-700 [&::-webkit-calendar-picker-indicator]:filter dark:[&::-webkit-calendar-picker-indicator]:invert"
+                      className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-gray-900 dark:text-white border border-gray-300 dark:border-white/50 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-all font-medium hover:bg-gray-50 dark:hover:bg-slate-600 focus:bg-gray-50 dark:focus:bg-slate-600 [&::-webkit-calendar-picker-indicator]:filter dark:[&::-webkit-calendar-picker-indicator]:invert"
                     />
                   </div>
 
                   {/* Description */}
                   <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-400 mb-3 transition-colors duration-300">
+                    <label className="block text-xs font-semibold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-3 transition-colors duration-300">
                       Description (optional)
                     </label>
                     <input
@@ -250,18 +250,18 @@ export default function AddTransactionModal({ isOpen, onClose }) {
                       placeholder="Add notes..."
                       value={formData.description}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white dark:bg-slate-700/60 text-gray-900 dark:text-white border border-gray-300 dark:border-white/30 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500 font-medium hover:bg-gray-50 dark:hover:bg-slate-700/80 focus:bg-gray-50 dark:focus:bg-slate-700"
+                      className="w-full px-4 py-3 bg-white dark:bg-slate-700 text-gray-900 dark:text-white border border-gray-300 dark:border-white/50 rounded-lg focus:border-blue-500 dark:focus:border-blue-400 focus:outline-none transition-all placeholder-gray-400 dark:placeholder-gray-400 font-medium hover:bg-gray-50 dark:hover:bg-slate-600 focus:bg-gray-50 dark:focus:bg-slate-600"
                     />
                   </div>
 
                   {/* Buttons */}
-                  <div className="flex gap-4 mt-8 pt-6 border-t transition-colors duration-300 border-gray-200 dark:border-white/10">
+                  <div className="flex gap-4 mt-8 pt-6 border-t transition-colors duration-300 border-gray-200 dark:border-slate-700">
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       type="button"
                       onClick={handleClose}
-                      className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 text-gray-900 dark:text-white font-medium rounded-lg transition-all duration-300 border border-gray-300 dark:border-white/20 hover:border-gray-400 dark:hover:border-white/30"
+                      className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-900 dark:text-white font-medium rounded-lg transition-all duration-300 border border-gray-300 dark:border-slate-600 hover:border-gray-400 dark:hover:border-slate-500"
                     >
                       Cancel
                     </motion.button>

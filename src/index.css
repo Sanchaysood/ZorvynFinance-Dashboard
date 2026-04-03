@@ -26,7 +26,9 @@
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    @apply bg-white text-gray-900 transition-colors duration-500 overflow-x-hidden;
+    background: linear-gradient(to bottom right, #f8fafc, #eef2f7, #e2e8f0);
+    background-attachment: fixed;
+    @apply text-gray-900 transition-colors duration-500 overflow-x-hidden;
   }
 
   /* Dark mode */
@@ -34,7 +36,9 @@
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    @apply bg-gradient-to-br from-[#0f172a] via-[#0b1220] to-[#020617] text-white overflow-x-hidden;
+    background: linear-gradient(to bottom right, #0f172a, #0b1220, #020617);
+    background-attachment: fixed;
+    @apply text-white overflow-x-hidden;
   }
 }
 

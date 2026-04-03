@@ -54,9 +54,7 @@ export default function NavbarNew() {
   }
 
   return (
-    <nav className={`sticky top-0 z-50 flex items-center justify-between h-16 px-6 bg-white dark:bg-white/5 border-b border-gray-200 dark:border-white/10 shadow-[0_2px_10px_rgba(0,0,0,0.05)] dark:shadow-none overflow-visible transform transition-transform duration-300 ease-in-out ${
-      navbarVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
+    <nav className={`sticky top-0 z-50 flex items-center justify-between h-16 px-6 bg-white/80 dark:bg-[#0b1220]/70 backdrop-blur-md border-b border-gray-200 dark:border-white/10 shadow-[0_2px_10px_rgba(0,0,0,0.05)] dark:shadow-none overflow-visible transform transition-transform duration-300 ease-in-out ${navbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       {/* Left: Logo */}
       <div className="flex items-center">
         <img
