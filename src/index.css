@@ -1,0 +1,387 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Reset all default browser styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Light mode */
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    @apply bg-white text-gray-900 transition-colors duration-500 overflow-x-hidden;
+  }
+
+  /* Dark mode */
+  html.dark body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    @apply bg-gradient-to-br from-[#0f172a] via-[#0b1220] to-[#020617] text-white overflow-x-hidden;
+  }
+}
+
+@layer components {
+  /* Scroll animation */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+    50% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  /* Initial state: invisible without animation */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  /* Applied when element comes into view */
+  .animate-scroll-visible {
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+
+  /* Stagger animation for child elements */
+  .scroll-animate > * {
+    animation: slideInUp 0.6s ease-out;
+  }
+
+  /* Glow effect on hover */
+  .card-glow {
+    @apply transition-all duration-300;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+  }
+
+  .dark .card-glow:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Premium Button Styles */
+  .btn {
+    @apply px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center gap-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-blue-600 to-blue-500 text-white hover:scale-[1.02] active:scale-95 backdrop-blur-sm;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0px 30px rgba(37, 99, 235, 0.25);
+  }
+
+  .btn-secondary {
+    @apply btn bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-white/30 dark:border-white/10 text-text-dark dark:text-text-light hover:bg-white/90 dark:hover:bg-white/10 hover:scale-[1.02] active:scale-95 transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  .dark .btn-secondary:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-white/50 dark:hover:bg-white/10 backdrop-blur-sm rounded-full p-2.5;
+  }
+
+  .btn-disabled {
+    @apply opacity-50 cursor-not-allowed hover:scale-100 !important;
+  }
+
+  /* Premium Card Styles */
+  .glass-card {
+    @apply bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/15 rounded-2xl transition-all duration-300;
+  }
+
+  .glass-card-hover {
+    @apply glass-card hover:bg-white/70 dark:hover:bg-white/[0.08] hover:scale-[1.02] hover:border-white/60 dark:hover:border-white/25;
+  }
+
+  .glass-card-hover:hover {
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .dark .glass-card-hover:hover {
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Select and Input Styling */
+  select,
+  input[type="date"],
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    color-scheme: dark;
+  }
+
+  select option {
+    background-color: #1f2937;
+    color: white;
+    padding: 0.5rem;
+  }
+
+  select option:checked {
+    background-color: #3b82f6;
+    color: white;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(0.8);
+    cursor: pointer;
+  }
+
+  .card {
+    @apply glass-card p-8;
+  }
+
+  .card {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .card {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-hover {
+    @apply card glass-card-hover cursor-pointer;
+  }
+
+  .card-hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .dark .card-hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Premium Input Styles */
+  .input-field {
+    @apply w-full px-4 py-3 border border-white/30 dark:border-white/10 rounded-xl bg-white/50 dark:bg-white/5 backdrop-blur-md text-text-dark dark:text-text-light focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 placeholder-gray-400 dark:placeholder-gray-600;
+  }
+
+  /* Table Styles */
+  .table-row {
+    @apply hover:bg-white/50 dark:hover:bg-white/[0.03] transition-colors duration-200 border-b border-white/20 dark:border-white/5;
+  }
+
+  /* Premium Badge Styles */
+  .badge {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200;
+  }
+
+  .badge-income {
+    @apply bg-emerald-100/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 backdrop-blur-sm border border-emerald-200/50 dark:border-emerald-800/30;
+  }
+
+  .badge-expense {
+    @apply bg-red-100/80 dark:bg-red-900/20 text-red-700 dark:text-red-300 backdrop-blur-sm border border-red-200/50 dark:border-red-800/30;
+  }
+
+  .badge-category {
+    @apply bg-blue-100/80 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 backdrop-blur-sm border border-blue-200/50 dark:border-blue-800/30;
+  }
+
+  /* Premium Divider */
+  .divider {
+    @apply h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-700;
+  }
+
+  /* Segmented Control */
+  .segmented-control {
+    @apply inline-flex gap-1 p-1 bg-white/30 dark:bg-white/5 backdrop-blur-xl rounded-full border border-white/30 dark:border-white/10;
+  }
+
+  .segmented-control-item {
+    @apply px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 cursor-pointer;
+  }
+
+  .segmented-control-item-active {
+    @apply bg-gradient-to-r from-blue-600 to-blue-500 text-white backdrop-blur-sm;
+    box-shadow: 0 0px 20px rgba(37, 99, 235, 0.15);
+  }
+
+  .segmented-control-item-inactive {
+    @apply text-gray-600 dark:text-gray-400 hover:text-text-dark dark:hover:text-white;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent;
+  }
+
+  /* ========== SCROLL ANIMATIONS ========== */
+  
+  @keyframes slideUpIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Applied via Framer Motion useInView */
+  .scroll-animate {
+    animation: slideUpIn 0.6s ease-out forwards;
+  }
+
+  /* ========== MICRO ANIMATIONS ========== */
+
+  @keyframes glowPulse {
+    0%, 100% {
+      box-shadow: 0 0px 20px rgba(37, 99, 235, 0.15);
+    }
+    50% {
+      box-shadow: 0 0px 30px rgba(37, 99, 235, 0.25);
+    }
+  }
+
+  /* Subtle glow pulse on primary cards */
+  .card-glow-pulse {
+    animation: glowPulse 4s ease-in-out infinite;
+  }
+
+  /* ========== ENHANCED HOVER EFFECTS ========== */
+
+  .card-hover-lift {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5;
+  }
+
+  .card-hover-lift:hover {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .card-hover-lift:hover {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Enhanced button hover */
+  .btn-hover-glow {
+    @apply transition-all duration-300;
+  }
+
+  .btn-hover-glow:hover {
+    filter: brightness(1.1);
+  }
+
+  .btn-hover-glow:active {
+    @apply scale-95;
+  }
+
+  /* Table row hover enhancement */
+  .table-row-hover {
+    @apply relative transition-all duration-200;
+  }
+
+  .table-row-hover:hover {
+    @apply bg-white/70 dark:bg-white/[0.08];
+  }
+
+  .dark .table-row-hover:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* ========== ICON ANIMATIONS ========== */
+
+  .icon-hover-rotate {
+    @apply transition-transform duration-300;
+  }
+
+  .icon-hover-rotate:hover {
+    @apply scale-110;
+    transform: rotate(12deg) scale(1.1);
+  }
+
+  /* ========== CHART ANIMATIONS ========== */
+
+  @keyframes chartReveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .chart-animate {
+    animation: chartReveal 0.8s ease-out;
+  }
+
+  /* ========== SMOOTH TRANSITIONS ========== */
+
+  .transition-smooth {
+    @apply transition-all duration-500 ease-out;
+  }
+}

@@ -1,0 +1,130 @@
+// Generate mock transaction data - 15 transactions for March 2026
+export const getInitialTransactions = () => {
+  const transactions = [
+    // Income
+    {
+      id: 1,
+      date: '2026-03-30',
+      amount: 4500,
+      category: 'Salary',
+      type: 'income',
+      description: 'Monthly salary',
+    },
+    {
+      id: 2,
+      date: '2026-03-28',
+      amount: 1200,
+      category: 'Freelance',
+      type: 'income',
+      description: 'Freelance project',
+    },
+    // Expenses
+    {
+      id: 3,
+      date: '2026-03-27',
+      amount: 1200,
+      category: 'Rent',
+      type: 'expense',
+      description: 'Monthly rent',
+    },
+    {
+      id: 4,
+      date: '2026-03-25',
+      amount: 85,
+      category: 'Food',
+      type: 'expense',
+      description: 'Groceries',
+    },
+    {
+      id: 5,
+      date: '2026-03-23',
+      amount: 45,
+      category: 'Entertainment',
+      type: 'expense',
+      description: 'Movie tickets',
+    },
+    {
+      id: 6,
+      date: '2026-03-21',
+      amount: 125,
+      category: 'Shopping',
+      type: 'expense',
+      description: 'Clothing',
+    },
+    {
+      id: 7,
+      date: '2026-03-19',
+      amount: 65,
+      category: 'Travel',
+      type: 'expense',
+      description: 'Uber rides',
+    },
+    {
+      id: 8,
+      date: '2026-03-17',
+      amount: 75,
+      category: 'Utilities',
+      type: 'expense',
+      description: 'Electricity bill',
+    },
+    {
+      id: 9,
+      date: '2026-03-15',
+      amount: 150,
+      category: 'Healthcare',
+      type: 'expense',
+      description: 'Doctor visit',
+    },
+    {
+      id: 10,
+      date: '2026-03-13',
+      amount: 55,
+      category: 'Food',
+      type: 'expense',
+      description: 'Restaurant',
+    },
+    {
+      id: 11,
+      date: '2026-03-11',
+      amount: 800,
+      category: 'Investment',
+      type: 'income',
+      description: 'Stock dividends',
+    },
+    {
+      id: 12,
+      date: '2026-03-09',
+      amount: 200,
+      category: 'Shopping',
+      type: 'expense',
+      description: 'Electronics',
+    },
+    {
+      id: 13,
+      date: '2026-03-07',
+      amount: 95,
+      category: 'Entertainment',
+      type: 'expense',
+      description: 'Concert',
+    },
+    {
+      id: 14,
+      date: '2026-03-05',
+      amount: 120,
+      category: 'Travel',
+      type: 'expense',
+      description: 'Gas',
+    },
+    {
+      id: 15,
+      date: '2026-03-01',
+      amount: 90,
+      category: 'Utilities',
+      type: 'expense',
+      description: 'Internet bill',
+    },
+  ]
+
+  // Sort by date descending
+  return transactions.sort((a, b) => new Date(b.date) - new Date(a.date))
+}
